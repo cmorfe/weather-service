@@ -24,7 +24,7 @@ class Current extends Model
   protected static function booted()
   {
     static::addGlobalScope('recent', function (Builder $builder) {
-      $builder->whereDate('updated_at', '>', now()->subHour());
+      $builder->where('updated_at', '>', now()->subHour());
     });
   }
 
