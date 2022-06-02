@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Current extends Model
 {
-    use HasFactory;
+
+  use HasFactory;
+
+  protected $fillable = [
+    'query',
+    'weather_info'
+  ];
+
 }
