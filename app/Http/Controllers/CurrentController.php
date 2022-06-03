@@ -61,10 +61,11 @@ class CurrentController extends Controller
 
     $this->validateSuccess($weather_info);
 
-    return Current::updateOrCreate(
-      compact('query'),
-      compact('weather_info')
-    );
+    return Current::withoutGlobalScope('recent')
+      ->updateOrCreate(
+        compact('query'),
+        compact('weather_info')
+      );
   }
 
   /**
